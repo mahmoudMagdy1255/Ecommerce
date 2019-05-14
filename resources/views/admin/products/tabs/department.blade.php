@@ -2,10 +2,10 @@
 
 <script>
 
-  $(function () { 
+  $(function () {
 
     $('#jstree').jstree({
-      
+
       "core" : {
         'data' : {!! load_dep( $product->department_id ) !!},
         "themes" : {
@@ -19,7 +19,7 @@
     });
 
     $('#jstree').on('changed.jstree' , function(e , data) {
-      
+
       var i , j , r = [];
       var name = [];
 
@@ -29,14 +29,29 @@
 
       };
 
-      if(r.join(', ') != '' ){
-        
-        $('.department_id').val( r.join(', ') );
-        
+      var dep_id = r.join(', ') ;
+
+      if(dep_id != '' ){
+        $('.department_id').val( dep_id );
       }
 
+      $.ajax({
+        url: '{{ aurl('/load/weight/size') }}',
+        type: 'POST',
+        dataType: 'html',
+        data: {_token: '{{ csrf_token() }}' , dep_id:dep_id , product_id : "{{ $product->id }}" },
+      })
+      .done(function(data) {
+        $('.size_weight').html(data);
+        $('.info_data').removeClass('hidden');
+      })
+      .fail(function() {
+        console.log("error");
+      });
+
+
     });
-    
+
   });
 
 </script>

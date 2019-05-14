@@ -5,7 +5,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
 
 <script type="text/javascript">
-	
+
 	Dropzone.autoDiscover = false;
 
 	$('#dropzoneFileUpload').dropzone({
@@ -13,7 +13,7 @@
 		paramName:'file',
 		uploadMultiple:false,
 		maxFile:1,
-		maxFilessize:4,
+		maxFilesize:4,
 		acceptedFiles:'image/*',
 		dictDefaultMessage:'اضغط هنا لرفع الملفات او قم بسحبها لافلاتها هنا',
 		dictRemoveFile:'{{ trans('admin.delete')}}',
@@ -46,9 +46,9 @@
 
 			this.on('success' , function(file , response){
 				if(response){
-					file.id = response.id;	
+					file.id = response.id;
 				}
-				
+
 			});
 		}
 	});
@@ -89,14 +89,14 @@
 			$('.dz-progress').remove();
 			@endif
 
-			
+
 		}
 	});
 
 </script>
 
 <style type="text/css">
-	
+
 	.dz-image img{
 		width: 100px;
 		height: 100px;

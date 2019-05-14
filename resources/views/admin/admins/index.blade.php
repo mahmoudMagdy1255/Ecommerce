@@ -16,7 +16,7 @@
                 {!! Form::close() !!}
             </div>
             <!-- /.box-body -->
-          </div>
+</div>
 
 <!-- Modal -->
 <div id="multipleDelete" class="modal fade" role="dialog">

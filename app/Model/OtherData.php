@@ -4,11 +4,14 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Weight extends Model {
-	protected $table = 'weights';
+class OtherData extends Model {
 
 	protected $fillable = [
-		'name_ar',
-		'name_en',
+
+		'product_id',
+		'data_key',
+		'data_value',
+
 	];
+
 }

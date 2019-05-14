@@ -26,9 +26,11 @@
     <style>
      html,body,.alert , h1, h2, h3, h4, h5, h6 {
       font-family: 'Cairo', sans-serif;
-     } 
+     }
     </style>
   @endif
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ url('/') }}/design/adminlte/dist/css/skins/_all-skins.min.css">
@@ -55,7 +57,7 @@
 
   <link rel="stylesheet" href="{{ url('/') }}/design/adminlte/jstree/themes/default/style.css">
 
-  
+
 
 </head>
 
